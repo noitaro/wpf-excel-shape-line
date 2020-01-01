@@ -1,0 +1,63 @@
+﻿<Thumb
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:WpfApp1"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors" 
+    x:Name="userControl" 
+    x:Class="WpfApp1.ShapeObject"
+    mc:Ignorable="d" 
+    d:DesignHeight="100" d:DesignWidth="100" 
+    d:DataContext="{d:DesignInstance {x:Type local:ShapeObjectViewModel}}">
+    <Thumb.Template>
+        <ControlTemplate TargetType="{x:Type Thumb}">
+            <Grid x:Name="LayoutRoot">
+                <materialDesign:Card 
+                    Background="{DynamicResource PrimaryHueDarkBrush}" 
+                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                    Padding="8"
+                    UniformCornerRadius="6"
+                    VerticalAlignment="Stretch"
+                    Margin="3">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding XPosition, StringFormat=X:{0}}"/>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding YPosition, StringFormat=Y:{0}}"/>
+                    </StackPanel>
+                </materialDesign:Card>
+
+                <Button Background="GreenYellow" 
+                    x:Name="top" 
+                    Height="5" Width="5"
+                    VerticalAlignment="Top" 
+                    HorizontalAlignment="Center" Cursor="Hand" PreviewMouseDown="Button_MouseDown" PreviewMouseMove="Button_MouseMove" PreviewMouseUp="Button_MouseUp">
+                </Button>
+
+                <Button Background="GreenYellow" 
+                    x:Name="right" 
+                    HorizontalAlignment="Right" 
+                    Width="5" Height="5" 
+                    VerticalAlignment="Center" Cursor="Hand" PreviewMouseDown="Button_MouseDown" PreviewMouseMove="Button_MouseMove" PreviewMouseUp="Button_MouseUp">
+                </Button>
+
+                <Button Background="GreenYellow" 
+                    x:Name="bottom" 
+                    HorizontalAlignment="Center" 
+                    Width="5" Height="5" 
+                    VerticalAlignment="Bottom" Cursor="Hand" PreviewMouseDown="Button_MouseDown" PreviewMouseMove="Button_MouseMove" PreviewMouseUp="Button_MouseUp">
+                </Button>
+
+                <Button Background="GreenYellow" 
+                    x:Name="left" 
+                    Height="5" Width="5"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Left" Cursor="Hand" PreviewMouseDown="Button_MouseDown" PreviewMouseMove="Button_MouseMove" PreviewMouseUp="Button_MouseUp">
+                </Button>
+
+            </Grid>
+        </ControlTemplate>
+    </Thumb.Template>
+
+</Thumb>
+
